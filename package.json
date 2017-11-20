@@ -3,8 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "apollo": "^0.2.2",
+    "apollo-client": "^2.0.3",
+    "apollo-server-express": "^1.2.0",
+    "express": "^4.16.2",
+    "graphql": "^0.11.7",
+    "graphql-tools": "^2.8.0",
     "react": "^16.1.1",
+    "react-apollo": "^2.0.1",
     "react-dom": "^16.1.1",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17"
   },
   "scripts": {
