@@ -14,12 +14,14 @@ const request = () => {
 module.exports = {
   Query: {
     persons: async () => {
-      return request()
+      return await request()
     },
     personByMajor: async (_, data) => {
       const rawData = await request()
       const search = data.major
-      const p_major = await Object.key(rawData.search)
+      console.log(search)
+      const major = await Object.key(rawData.search)
+      return major.json()
     }
   }
 }
