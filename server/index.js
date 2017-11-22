@@ -11,8 +11,8 @@ const {graphqlExpress, graphiqlExpress} = require('apollo-server-express')
 const schema = require('./schema/index')
 
 const cors = require('cors')
-
 const app = express()
+
 app.use(cors())
 app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }))
 app.use('/graphiql', graphiqlExpress({ 
