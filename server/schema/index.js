@@ -4,6 +4,10 @@ const resolvers = require('./resolvers');
 const typeDefs = `
   type Query {
     persons: [Person]
+    personInContent: [Person]
+    personInMarketing: [Person]
+    personInDesign: [Person]
+    personInProgramming: [Person]
   }
   type Person {
     firstName: String,

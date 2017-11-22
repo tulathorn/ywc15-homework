@@ -17,9 +17,25 @@ module.exports = {
     persons: async () => {
       return request()
     },
-    personByMajor: async (_, data) => {
-      const personData = await request()
-
+    personInContent: async () => {
+      const data = await request()
+      const filteredData = data.filter(person => person.major === 'content')
+      return filteredData
+    },
+    personInMarketing: async () => {
+      const data = await request()
+      const filteredData = data.filter(person => person.major === 'marketing')
+      return filteredData
+    },
+    personInDesign: async () => {
+      const data = await request()
+      const filteredData = data.filter(person => person.major === 'design')
+      return filteredData
+    },
+    personInProgramming: async () => {
+      const data = await request()
+      const filteredData = data.filter(person => person.major === 'programming')
+      return filteredData
     },
   }
 }
