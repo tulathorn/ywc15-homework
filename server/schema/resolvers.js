@@ -7,6 +7,7 @@ const request = () => {
       if (respone.status >= 400){
         throw new Error("Bad response from server");
       }
+      console.log(respone)
       return respone.json()
     })
 }
@@ -14,14 +15,11 @@ const request = () => {
 module.exports = {
   Query: {
     persons: async () => {
-      return await request()
+      return request()
     },
     personByMajor: async (_, data) => {
-      const rawData = await request()
-      const search = data.major
-      console.log(search)
-      const major = await Object.key(rawData.search)
-      return major.json()
-    }
+      const personData = await request()
+
+    },
   }
 }
