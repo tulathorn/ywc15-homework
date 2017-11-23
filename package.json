@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "apollo": "^0.2.2",
+    "apollo-cache-inmemory": "^1.1.1",
     "apollo-client": "^2.0.3",
+    "apollo-link-http": "^1.2.0",
     "apollo-server-express": "^1.2.0",
     "cors": "^2.8.4",
     "express": "^4.16.2",
