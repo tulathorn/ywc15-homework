@@ -6,6 +6,9 @@ import { withState, compose } from 'recompose'
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 
+import styled from 'react-emotion'
+
+
 export const query = gql`
   query persons($major: String!,$name: String) {
     persons(major: $major,firstName: $name) {
@@ -47,7 +50,7 @@ const DataTable = graphql(query, {
   options: ({ filterVal, major }) => ({ variables: { name: filterVal, major: major }})
 })(table)
 
-export const ProgrammingPage = ({ show, filterVal, setFilterVal, major }) => {
+export const DataHeader = ({ show, filterVal, setFilterVal, major }) => {
   if(!show)
     return null
 
@@ -55,10 +58,8 @@ export const ProgrammingPage = ({ show, filterVal, setFilterVal, major }) => {
     <div>
       <div className="container">
         <div className="row">
-          <div className="col-12">
-            <div className="col-5">
-              <h5>สาขา {major}</h5>
-            </div>
+          <div>
+            <label>ค้นหารายชื่อสาขา {major}:</label>
             <input onChange={e => setFilterVal(e.target.value)} />
           </div>
           <div className="col-12">
@@ -70,4 +71,4 @@ export const ProgrammingPage = ({ show, filterVal, setFilterVal, major }) => {
   )
 }
 
-export default withState('filterVal', 'setFilterVal', '')(ProgrammingPage)
+export default withState('filterVal', 'setFilterVal', '')(DataHeader)
