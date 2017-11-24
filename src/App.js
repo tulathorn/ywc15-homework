@@ -7,7 +7,8 @@ import logo from './logo.svg';
 import './App.css';
 
 import {
-  MainPage
+  MainPage,
+  ProgrammingPage
 } from './pages'
 
 const App = props => (
@@ -16,6 +17,7 @@ const App = props => (
     <section className="page-main-inner">
       <Switch location={props.location}>
         <Route exact path="/" component={MainPage} />
+        <Route  path="/programming" component={ProgrammingPage} />
       </Switch>
     </section>
     </BrowserRouter>
