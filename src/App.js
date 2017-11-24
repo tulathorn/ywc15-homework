@@ -11,6 +11,8 @@ import {
   ProgrammingPage
 } from './pages'
 
+console.log(ProgrammingPage)
+
 const App = props => (
   <div>
     <BrowserRouter>

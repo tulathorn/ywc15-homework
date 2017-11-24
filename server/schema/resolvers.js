@@ -4,38 +4,21 @@ const fetch = require('isomorphic-fetch')
 const request = () => {
   return fetch(`https://ywc15.ywc.in.th/api/interview/`)
     .then((respone) => {
-      if (respone.status >= 400){
+      if (respone.status >= 400) {
         throw new Error("Bad response from server");
       }
-      console.log(respone)
       return respone.json()
     })
 }
 
 module.exports = {
   Query: {
-    persons: async () => {
-      return request()
-    },
-    personInContent: async () => {
-      const data = await request()
-      const filteredData = data.filter(person => person.major === 'content')
+    persons: async(_, data) => {
+      const req = await request()
+      const filteredData = req
+        .filter(person => person.major === data.major)
+        .filter(person => person.firstName.indexOf(data.firstName) !== -1)
       return filteredData
-    },
-    personInMarketing: async () => {
-      const data = await request()
-      const filteredData = data.filter(person => person.major === 'marketing')
-      return filteredData
-    },
-    personInDesign: async () => {
-      const data = await request()
-      const filteredData = data.filter(person => person.major === 'design')
-      return filteredData
-    },
-    personInProgramming: async () => {
-      const data = await request()
-      const filteredData = data.filter(person => person.major === 'programming')
-      return filteredData
-    },
+    }
   }
 }

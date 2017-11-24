@@ -3,11 +3,7 @@ const resolvers = require('./resolvers');
 
 const typeDefs = `
   type Query {
-    persons: [Person]
-    personInContent: [Person]
-    personInMarketing: [Person]
-    personInDesign: [Person]
-    personInProgramming: [Person]
+    persons(major:String!, firstName: String): [Person]
   }
   type Person {
     firstName: String,
