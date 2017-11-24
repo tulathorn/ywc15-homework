@@ -8,10 +8,7 @@ import './App.css';
 
 import {
   MainPage,
-  ProgrammingPage
 } from './pages'
-
-console.log(ProgrammingPage)
 
 const App = props => (
   <div>
@@ -19,7 +16,6 @@ const App = props => (
     <section className="page-main-inner">
       <Switch location={props.location}>
         <Route exact path="/" component={MainPage} />
-        <Route  path="/programming" component={ProgrammingPage} />
       </Switch>
     </section>
     </BrowserRouter>

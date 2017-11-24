@@ -1,7 +1,7 @@
 import React from 'react';
 import { withState } from 'recompose'
 
-import DataTable from './ProgrammingPage'
+import DataTable from '../components/TableResult'
 
 import '../static/boostrap/bootstrap.min.css'
 
