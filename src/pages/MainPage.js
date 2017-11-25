@@ -28,7 +28,7 @@ const CardContainer = styled('div')`
 `
 
 const Button = styled('button')`
-  background-color: #69F0AE;
+  background-color: #00E5FF;
   margin: 10px;
   width: 200px;
 `
