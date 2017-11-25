@@ -1,15 +1,26 @@
 import React from 'react';
 import { withState } from 'recompose'
+import {defaultDataIdFromObject} from 'apollo-cache-inmemory'
 
 import DataTable from '../components/TableResult'
 import HeaderContent from '../components/HeaderContent'
 
 import '../static/boostrap/bootstrap.min.css'
+import { injectGlobal } from 'emotion'
 import styled from 'react-emotion'
-import {defaultDataIdFromObject} from 'apollo-cache-inmemory'
+
+injectGlobal`
+  * {
+    @font-face{
+      font-family: 'Athiti',sans-serif;
+      src: '../style/fonts/Athiti/Athiti-Regular.ttf'
+    }
+}` 
 
 const MainContainer = styled('div')`
   background-color: #ECEFF1;
+  bottom: 0;
+  min-height: 100vh;
 `
 
 const CardContainer = styled('div')`
@@ -18,9 +29,8 @@ const CardContainer = styled('div')`
 
 const Button = styled('button')`
   background-color: #69F0AE;
-  padding-left: 50px;
-  padding-right: 50px;
   margin: 10px;
+  width: 200px;
 `
 
 const MainPage = ({ showData, isShowData }) => (
@@ -33,8 +43,8 @@ const MainPage = ({ showData, isShowData }) => (
             <div className="card-body">
               <h4 className="card-title">ตรวจสอบรายชื่อผู้สมัคร</h4>
               <h6 className="card-subtitle mb-2 text-muted">เลือกสาขาที่ผู้สมัครได้เลือกไว้</h6>
-              <div className="d-flex justify-content-center">
-                <div className="col-12">
+              <div className="row text-center">
+                <div className="col-12 d-md-flex d-block justify-content-center">
                   <Button 
                     type="button" 
                     className="btn" 
