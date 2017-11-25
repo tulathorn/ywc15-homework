@@ -3,12 +3,18 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import logo from './logo.svg';
-import './App.css';
+import './style/fonts/Athiti/Athiti-Regular.ttf'
 
+import { injectGlobal } from 'react-emotion'
 import {
   MainPage,
 } from './pages'
+
+injectGlobal`
+  * {
+    font-family: Athiti;
+}` 
+
 
 const App = props => (
   <div>

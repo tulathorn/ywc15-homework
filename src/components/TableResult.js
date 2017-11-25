@@ -8,6 +8,13 @@ import "react-table/react-table.css";
 
 import styled from 'react-emotion'
 
+// compile css
+const Inputbox = styled('input')`
+  margin-left: 10px;
+  width: 300px;
+  border-radius: 10px;
+`
+
 // Quert data from GraphQL
 export const query = gql`
   query persons($major: String!,$name: String) {
@@ -46,7 +53,7 @@ const table = ({ data }) => data.loading ? <div>Loading.....</div> : (
     className="-striped -highlight"
   />
 )
-
+// Wait for reason
 const DataTable = graphql(query, {
   options: ({ filterVal, major }) => ({ variables: { name: filterVal, major: major }})
 })(table)
@@ -60,7 +67,7 @@ export const DataHeader = ({ show, filterVal, setFilterVal, major }) => {
         <div className="row">
           <div>
             <label>ค้นหารายชื่อสาขา {major}:</label>
-            <input onChange={e => setFilterVal(e.target.value)} />
+            <Inputbox onChange={e => setFilterVal(e.target.value)} />
           </div>
           <div className="col-12">
             <DataTable filterVal={filterVal} major={major} />
