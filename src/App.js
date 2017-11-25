@@ -3,8 +3,6 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
-import './style/fonts/Athiti/Athiti-Regular.ttf'
-
 import { injectGlobal } from 'react-emotion'
 import {
   MainPage,
