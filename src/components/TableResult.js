@@ -51,6 +51,10 @@ const table = ({ data }) => data.loading ? <div>Loading.....</div> : (
     ]}
     defaultPageSize={10}
     className="-striped -highlight"
+    style={{
+      overlflow: 'scroll',
+      height: '100%'
+    }}
   />
 )
 // Wait for reason
@@ -62,16 +66,14 @@ export const DataHeader = ({ show, filterVal, setFilterVal, major }) => {
   if(!show)
     return null
   return (
-    <div>
-      <div className="container">
-        <div className="row">
-          <div>
-            <label>ค้นหารายชื่อสาขา {major}:</label>
-            <Inputbox onChange={e => setFilterVal(e.target.value)} />
-          </div>
-          <div className="col-12">
-            <DataTable filterVal={filterVal} major={major} />
-          </div>
+    <div className="container">
+      <div className="row">
+        <div>
+          <label>ค้นหารายชื่อสาขา {major}:</label>
+          <Inputbox onChange={e => setFilterVal(e.target.value)} />
+        </div>
+        <div className="col-12">
+          <DataTable filterVal={filterVal} major={major} />
         </div>
       </div>
     </div>

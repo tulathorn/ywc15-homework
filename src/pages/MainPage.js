@@ -1,6 +1,7 @@
 import React from 'react';
 import { withState } from 'recompose'
 import {defaultDataIdFromObject} from 'apollo-cache-inmemory'
+import {scroller} from 'react-scroll'
 
 import DataTable from '../components/TableResult'
 import HeaderContent from '../components/HeaderContent'
@@ -8,8 +9,14 @@ import HeaderContent from '../components/HeaderContent'
 import '../static/boostrap/bootstrap.min.css'
 import { injectGlobal } from 'emotion'
 import styled from 'react-emotion'
+import Particles from 'react-particles-js';
 
 injectGlobal`
+  html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
   * {
     @font-face{
       font-family: 'Athiti',sans-serif;
@@ -18,13 +25,17 @@ injectGlobal`
 }` 
 
 const MainContainer = styled('div')`
-  background-color: #ECEFF1;
-  bottom: 0;
   min-height: 100vh;
+  background-img: url('https://images.unsplash.com/photo-1496483353456-90997957cf99?auto=format&fit=crop&w=3032&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
+  color: white;
 `
 
 const CardContainer = styled('div')`
-  background-color: #FFFFFF;
+  background: transparent;
+  color: white;
+  border: 1px solid;
+  border-color: #65fdf1;
+  margin-bottom: 20px;
 `
 
 const Button = styled('button')`
@@ -37,8 +48,8 @@ const MainPage = ({ showData, isShowData }) => (
   <MainContainer>
     <div className="container">
       <div className="row">
-        <HeaderContent />
         <div className="col-12">
+          <HeaderContent />
           <CardContainer className="card">
             <div className="card-body">
               <h4 className="card-title">ตรวจสอบรายชื่อผู้สมัคร</h4>
