@@ -13,6 +13,7 @@ const schema = require('./schema/index')
 const cors = require('cors')
 const app = express()
 
+// Inti startup server
 app.use(cors())
 app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }))
 app.use('/graphiql', graphiqlExpress({ 

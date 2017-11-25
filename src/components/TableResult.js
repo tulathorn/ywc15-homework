@@ -8,7 +8,7 @@ import "react-table/react-table.css";
 
 import styled from 'react-emotion'
 
-
+// Quert data from GraphQL
 export const query = gql`
   query persons($major: String!,$name: String) {
     persons(major: $major,firstName: $name) {
@@ -19,6 +19,7 @@ export const query = gql`
   }
 `
 
+// react-table for showing result
 const table = ({ data }) => data.loading ? <div>Loading.....</div> : (
   <ReactTable
     data={data.persons}
@@ -53,7 +54,6 @@ const DataTable = graphql(query, {
 export const DataHeader = ({ show, filterVal, setFilterVal, major }) => {
   if(!show)
     return null
-
   return (
     <div>
       <div className="container">
