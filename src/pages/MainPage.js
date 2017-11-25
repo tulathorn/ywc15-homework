@@ -26,7 +26,7 @@ injectGlobal`
 
 const MainContainer = styled('div')`
   min-height: 100vh;
-  background-img: url('https://images.unsplash.com/photo-1496483353456-90997957cf99?auto=format&fit=crop&w=3032&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
+  background-image: url('https://images.unsplash.com/photo-1476455553758-5a8b16727e23?auto=format&fit=crop&w=1950&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
   color: white;
 `
 
@@ -39,7 +39,7 @@ const CardContainer = styled('div')`
 `
 
 const Button = styled('button')`
-  background-color: #00E5FF;
+  background-color: #65fdf1;
   margin: 10px;
   width: 200px;
 `

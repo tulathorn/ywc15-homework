@@ -10,8 +10,8 @@ import styled from 'react-emotion'
 
 // compile css
 const Inputbox = styled('input')`
-  margin-left: 10px;
-  width: 300px;
+  margin: 10px;
+  width: 250px;
   border-radius: 10px;
 `
 
@@ -53,7 +53,10 @@ const table = ({ data }) => data.loading ? <div>Loading.....</div> : (
     className="-striped -highlight"
     style={{
       overlflow: 'scroll',
-      height: '100%'
+      height: '100%',
+      backgroundColor: "white",
+      color: "black",
+      opacity: "1"
     }}
   />
 )
@@ -68,7 +71,7 @@ export const DataHeader = ({ show, filterVal, setFilterVal, major }) => {
   return (
     <div className="container">
       <div className="row">
-        <div>
+        <div col-12>
           <label>ค้นหารายชื่อสาขา {major}:</label>
           <Inputbox onChange={e => setFilterVal(e.target.value)} />
         </div>
