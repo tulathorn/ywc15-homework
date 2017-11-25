@@ -1,5 +1,5 @@
 # YWC15-Homework
-This is the homework repository for 
+This is the homework repository for YWC15 SEMI FINAL ROUND
 
 ## Stack in this homework
 * **Front-end**
