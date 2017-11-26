@@ -60,7 +60,8 @@ const table = ({ data }) => data.loading ? <div>Loading.....</div> : (
     }}
   />
 )
-// Wait for reason
+
+// to put variable to graphql
 const DataTable = graphql(query, {
   options: ({ filterVal, major }) => ({ variables: { name: filterVal, major: major }})
 })(table)
